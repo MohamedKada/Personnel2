@@ -36,18 +36,20 @@ public class EmployeRepository {
         }
         return employe;
     }
-    /* public static boolean  editRoot() throws SQLException {
+     public static boolean  editRoot(String name, String mail, String password) throws SQLException {
         Connection conn = Database.connectDatabase();
         PreparedStatement Rootstmt = conn.prepareStatement("SELECT * FROM employe WHERE 'ADMIN' = 2");
         ResultSet rs = Rootstmt.executeQuery();
 
         if (!rs.next()) {
-            result ;
+            return false;
         }
-        PreparedStatement EditRootstmt = conn.prepareStatement("UPDATE EMPLOYE SET NOM_EMP = ? WHERE ID_EMP = ?;");
-        EditRootstmt.setString(1, rs.getString("NOM_EMP"));
-        EditRootstmt.setInt(2, rs.getInt("ID_EMP"));
+        PreparedStatement EditRootstmt = conn.prepareStatement("UPDATE EMPLOYE SET NOM_EMP = ?, MAIL_EMP = ?, MDP_EMP = ? WHERE ADMIN = 2;");
+        EditRootstmt.setString(1, name);
+        EditRootstmt.setString(2, mail);
+        EditRootstmt.setString(3, password);
+
         EditRootstmt.executeUpdate();
         return true;
-    }*/
+    }
 }

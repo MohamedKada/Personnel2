@@ -48,4 +48,11 @@ public class EditLigueViewController implements Initializable {
             SceneController.showAlert(Alert.AlertType.ERROR, "Erreur", "La mise a jour de la ligue a échoué");
         }
     }
+    @FXML
+    public void loadBack(ActionEvent event) throws SQLException {
+        SceneController sceneController = new SceneController();
+        sceneController.loadStages("home-view.fxml");
+        Stage stage = (Stage) ligueNameTextField.getScene().getWindow();
+        stage.close();
+    }
 }

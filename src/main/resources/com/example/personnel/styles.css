@@ -8,10 +8,10 @@
 }
 
 /* Labels */
-.label {
+/*.label {
     -fx-font-size: 14px;
     -fx-text-fill: #343a40;
-}
+}*/
 
 /* Titres */
 .title-label {
@@ -108,11 +108,11 @@
     -fx-text-fill: #495057;
 }
 
-.table-row-cell {
+/*.table-row-cell {
     -fx-background-color: white;
     -fx-border-color: transparent transparent #f2f2f2 transparent;
     -fx-padding: 5;
-}
+}*/
 
 .table-row-cell:odd {
     -fx-background-color: #f8f9fa;
@@ -156,4 +156,4 @@
 /* Animation pour les transitions */
 .animated {
     -fx-transition-duration: 0.2s;
-} 
+}

@@ -32,4 +32,11 @@ public class AjouterLigueController {
             SceneController.showAlert(Alert.AlertType.ERROR, "Erreur", "Cette ligue existe déja");
         }
     }
+    @FXML
+    public void loadBack(ActionEvent event) throws SQLException {
+        SceneController sceneController = new SceneController();
+        sceneController.loadStages("home-view.fxml");
+        Stage stage = (Stage) txtLigue.getScene().getWindow();
+        stage.close();
+    }
 }

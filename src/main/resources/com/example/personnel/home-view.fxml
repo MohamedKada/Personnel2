@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="500.0" prefWidth="750.0" styleClass="root" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.personnel.controllers.HomeViewController">
    <children>
@@ -40,7 +39,7 @@
                   </VBox>
                </children>
             </HBox>
-            <Button fx:id="loadBack" layoutX="20.0" layoutY="351.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="96.0" styleClass="button-secondary" text="Quitter" />
+            <Button fx:id="loadQuit" layoutX="20.0" layoutY="351.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="122.0" styleClass="button-secondary" text="Se déconnecter" />
          </children>
       </VBox>
    </children>
