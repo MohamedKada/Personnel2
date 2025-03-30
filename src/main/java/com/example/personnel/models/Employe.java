@@ -11,6 +11,7 @@ public class Employe {
     private LocalDate dateDepart;
     private int admin;
     private String mail;
+    private int ligueID;
 
     public Employe(int id, String nom, String prenom, String password, LocalDate dateArrive, LocalDate dateDepart, int admin, String mail) {
         this.id = id;
@@ -21,6 +22,17 @@ public class Employe {
         this.dateDepart = dateDepart;
         this.admin = admin;
         this.mail = mail;
+    }
+    public Employe(int id, String nom, String prenom, String password, LocalDate dateArrive, LocalDate dateDepart, int admin, String mail, int ligueID) {
+        this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.password = password;
+        this.dateArrive = dateArrive;
+        this.dateDepart = dateDepart;
+        this.admin = admin;
+        this.mail = mail;
+        this.ligueID = ligueID;
     }
 
     public int getId() {
@@ -99,5 +111,9 @@ public class Employe {
                 ", admin=" + admin +
                 ", mail='" + mail + '\'' +
                 '}';
+    }
+
+    public int getligueID() {
+        return ligueID;
     }
 }

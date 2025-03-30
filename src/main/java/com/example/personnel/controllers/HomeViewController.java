@@ -14,6 +14,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
@@ -87,14 +88,25 @@ public class HomeViewController implements Initializable {
     }
     
     @FXML
-    public void loadRoot(ActionEvent event) {
+    public void loadRoot(ActionEvent event) throws IOException {
         SceneController sceneController = new SceneController();
-        sceneController.loadStages("gerer-root-view.fxml");
+        sceneController.switchView("gerer-root-view.fxml", event);
     }
     
     @FXML
-    public void loadEmployee(ActionEvent event) {
+    public void loadEmploye(ActionEvent event) throws IOException {
+        if (this.ligueTableView.getSelectionModel().getSelectedItems().isEmpty()) {
+            SceneController.showAlert(Alert.AlertType.ERROR, "Erreur", "Vous devez sélectionner une ligue");
+            return;
+        }
+        this.selectedLigue = this.ligueTableView.getSelectionModel().getSelectedItem();
+        GererEmployeController.setSelectedLigue(this.selectedLigue);
         SceneController sceneController = new SceneController();
-        sceneController.loadStages("gerer-employes-view.fxml");
+        sceneController.switchView("gerer-employes-view.fxml", event);
+    }
+    @FXML
+    public void loadQuit(ActionEvent event) {
+        Stage stage = (Stage) ligueTableView.getScene().getWindow();
+        stage.close();
     }
 }

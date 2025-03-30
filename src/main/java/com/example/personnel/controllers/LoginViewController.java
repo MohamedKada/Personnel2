@@ -26,6 +26,7 @@ public class LoginViewController {
 
         Employe employe = EmployeRepository.login(mailTextField.getText(), passwordTextField.getText());
         if (employe != null) {
+            EmployeRepository.rootUser = employe;
             SceneController sceneController = new SceneController();
             sceneController.switchView("home-view.fxml", event);
         }

@@ -10,14 +10,16 @@
    <children>
       <TableView fx:id="employeTableView" layoutX="42.0" layoutY="57.0" prefHeight="286.0" prefWidth="311.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="ID" />
-          <TableColumn prefWidth="234.4000244140625" text="Nom" />
+          <TableColumn fx:id="idColumn" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="nomColumn" prefWidth="92.79998016357422" text="Nom" />
+            <TableColumn fx:id="prenomColumn" maxWidth="142.3999816894531" prefWidth="142.3999816894531" text="Prénom" />
         </columns>
       </TableView>
-      <Button fx:id="loadAjouter" layoutX="406.0" layoutY="95.0" mnemonicParsing="false" text="Ajouter" />
-      <Button fx:id="loadModifier" layoutX="403.0" layoutY="302.0" mnemonicParsing="false" text="Modifier" />
-      <Button fx:id="loadSupprimer" layoutX="398.0" layoutY="163.0" mnemonicParsing="false" text="Supprimer" />
-      <Button fx:id="loadBack" layoutX="14.0" layoutY="357.0" mnemonicParsing="false" text="Retour" />
+      <Button fx:id="loadAjouter" layoutX="406.0" layoutY="95.0" mnemonicParsing="false" onAction="#loadAdd" text="Ajouter" />
+      <Button fx:id="loadModifier" layoutX="403.0" layoutY="272.0" mnemonicParsing="false" onAction="#loadEdit" text="Modifier" />
+      <Button fx:id="loadSupprimer" layoutX="370.0" layoutY="159.0" mnemonicParsing="false" onAction="#loadSuppU" text="Supprimer Utilisateur" />
+      <Button fx:id="loadBack" layoutX="14.0" layoutY="357.0" mnemonicParsing="false" onAction="#loadBack" text="Retour" />
       <Label layoutX="198.0" layoutY="21.0" text="Gestion des employés" />
+      <Button fx:id="loadSupprimer1" layoutX="368.0" layoutY="211.0" mnemonicParsing="false" onAction="#loadSuppL" text="Supprimer de la Ligue" />
    </children>
 </AnchorPane>

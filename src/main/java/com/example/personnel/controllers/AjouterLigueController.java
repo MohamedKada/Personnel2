@@ -9,6 +9,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class AjouterLigueController {
@@ -33,7 +34,7 @@ public class AjouterLigueController {
         }
     }
     @FXML
-    public void loadBack(ActionEvent event) throws SQLException {
+    public void loadBack(ActionEvent event){
         SceneController sceneController = new SceneController();
         sceneController.loadStages("home-view.fxml");
         Stage stage = (Stage) txtLigue.getScene().getWindow();
