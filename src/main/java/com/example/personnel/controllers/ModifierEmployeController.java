@@ -51,6 +51,12 @@ public class ModifierEmployeController implements Initializable {
             return;
         }
 
+        // Validation des dates
+        if (departDatePicker.getValue().isBefore(arriveeDatePicker.getValue())) {
+            SceneController.showAlert(Alert.AlertType.ERROR, "Erreur", "La date de départ ne peut pas être antérieure à la date d'arrivée");
+            return;
+        }
+
         int adminInput;
         if (adminRadioButton.isSelected()) {
             adminInput = 1;

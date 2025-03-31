@@ -109,4 +109,28 @@ public class HomeViewController implements Initializable {
         Stage stage = (Stage) ligueTableView.getScene().getWindow();
         stage.close();
     }
+    
+    @FXML
+    public void loadCloneLigue(ActionEvent event) {
+        if (this.ligueTableView.getSelectionModel().getSelectedItems().isEmpty()) {
+            SceneController.showAlert(Alert.AlertType.ERROR, "Erreur", "Vous devez sélectionner une ligue");
+            return;
+        }
+
+        this.selectedLigue = this.ligueTableView.getSelectionModel().getSelectedItem();
+        
+        try {
+            Ligue nouvelleLigue = this.selectedLigue.cloneLigue();
+            if (nouvelleLigue != null) {
+                SceneController.showAlert(Alert.AlertType.CONFIRMATION, "Succès", "La ligue a été dupliquée avec succès");
+                // Rafraîchir la liste des ligues pour afficher la nouvelle ligue
+                this.ligues = LigueRepository.getLigues();
+                this.ligueTableView.setItems(ligues);
+            } else {
+                SceneController.showAlert(Alert.AlertType.ERROR, "Erreur", "Une ligue avec ce nom existe déjà");
+            }
+        } catch (SQLException e) {
+            SceneController.showAlert(Alert.AlertType.ERROR, "Erreur", "Erreur lors de la duplication de la ligue: " + e.getMessage());
+        }
+    }
 }

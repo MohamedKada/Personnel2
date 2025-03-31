@@ -69,6 +69,16 @@
     -fx-background-color: #157347;
 }
 
+/* Bouton warning (jaune) */
+.button-warning {
+    -fx-background-color: #ffc107;
+    -fx-text-fill: #212529;
+}
+
+.button-warning:hover {
+    -fx-background-color: #e0a800;
+}
+
 /* Champs de texte */
 .text-field {
     -fx-background-color: white;

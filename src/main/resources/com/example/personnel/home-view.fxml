@@ -33,6 +33,7 @@
                         <Button fx:id="loadRoot" mnemonicParsing="false" onAction="#loadRoot" prefHeight="35.0" prefWidth="130.0" text="Gérer compte root" />
                         <Button mnemonicParsing="false" onAction="#loadAddLigue" prefHeight="30.0" prefWidth="130.0" styleClass="button-success" text="Ajouter" />
                         <Button mnemonicParsing="false" onAction="#loadEditLigue" prefHeight="30.0" prefWidth="130.0" text="Renommer" />
+                        <Button mnemonicParsing="false" onAction="#loadCloneLigue" prefHeight="30.0" prefWidth="130.0" styleClass="button-warning" text="Dupliquer" />
                         <Button mnemonicParsing="false" onAction="#loadSuppLigue" prefHeight="30.0" prefWidth="130.0" styleClass="button-danger" text="Supprimer" />
                         <Button fx:id="loadEmploye" mnemonicParsing="false" onAction="#loadEmploye" prefHeight="30.0" prefWidth="130.0" text="Gérer employés" />
                      </children>
